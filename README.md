@@ -1,11 +1,15 @@
-# A-Alex-SQ.github.io
+# Alex's Personal Homepage
 
-Personal academic homepage of Ruichang Zhu (Alex).
+This repository hosts the personal homepage of **Ruichang Zhu (Alex)**, an undergraduate student majoring in Intelligent Sensing Engineering at Nanjing University of Posts and Telecommunications.
 
-## Publish with GitHub Pages
+The website introduces my education, selected projects, honors, research interests, and personal interests.
 
-Create a public repository named `A-Alex-SQ.github.io`, upload all files in this folder to the repository root, and keep the default branch as `main`.
+## Website
 
-The site URL will be:
+Visit my homepage:
 
-`https://a-alex-sq.github.io/`
+https://a-alex-sq.github.io/
+
+## Built With
+
+HTML, CSS, JavaScript, and GitHub Pages.
