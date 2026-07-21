@@ -1107,6 +1107,333 @@ body.theme-deep-lab .section {
   .projects-grid .role { min-height: 0; }
 }
 
+
+
+/* ================================================================
+   Featured engineering experience — YOLO11 pipeline
+   ================================================================ */
+.engineering-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, .92fr) minmax(0, 1.48fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, .26);
+  border-radius: 18px;
+  background: rgba(255,255,255,.68);
+  box-shadow: 0 10px 30px rgba(15,23,42,.07);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.engineering-feature:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59,130,246,.42);
+  box-shadow: 0 20px 42px rgba(15,23,42,.13);
+}
+.pipeline-showcase {
+  position: relative;
+  min-height: 360px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(96,165,250,.24);
+  border-radius: 15px;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(139,92,246,.24), transparent 31%),
+    radial-gradient(circle at 9% 94%, rgba(34,211,238,.14), transparent 36%),
+    linear-gradient(155deg, #0d1d35 0%, #071224 56%, #10152d 100%);
+  box-shadow: inset 0 0 40px rgba(37,99,235,.08), 0 12px 30px rgba(2,6,23,.24);
+}
+.pipeline-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(96,165,250,.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96,165,250,.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(135deg, #000, transparent 72%);
+}
+.pipeline-topline,
+.pipeline-flow,
+.pipeline-status { position: relative; z-index: 1; }
+.pipeline-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #7dd3fc;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.pipeline-topline time {
+  color: #a5b4fc;
+  font-variant-numeric: tabular-nums;
+}
+.pipeline-flow { display: grid; gap: 7px; }
+.pipeline-node {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 11px;
+  align-items: center;
+  min-height: 52px;
+  padding: 8px 11px;
+  border: 1px solid rgba(96,165,250,.20);
+  border-radius: 12px;
+  background: linear-gradient(110deg, rgba(30,58,138,.28), rgba(15,23,42,.62));
+  box-shadow: inset 0 0 18px rgba(59,130,246,.04);
+}
+.pipeline-node:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  bottom: -8px;
+  z-index: 2;
+  width: 1px;
+  height: 8px;
+  background: linear-gradient(#38bdf8, #818cf8);
+  box-shadow: 0 0 8px rgba(56,189,248,.45);
+}
+.pipeline-node b {
+  grid-row: 1 / 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(125,211,252,.34);
+  border-radius: 9px;
+  color: #e0f2fe;
+  background: linear-gradient(145deg, rgba(14,116,144,.34), rgba(79,70,229,.34));
+  font-size: 11px;
+  box-shadow: 0 0 14px rgba(37,99,235,.13);
+}
+.pipeline-node span {
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+.pipeline-node small {
+  margin-top: 2px;
+  color: #94a3b8;
+  font-size: 10.5px;
+  line-height: 1.25;
+}
+.pipeline-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #bae6fd;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.pipeline-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #22d3ee;
+  box-shadow: 0 0 10px rgba(34,211,238,.75);
+  animation: pipelinePulse 2.2s ease-in-out infinite;
+}
+@keyframes pipelinePulse { 50% { opacity: .45; transform: scale(.78); } }
+
+.engineering-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 8px 8px 8px 2px;
+}
+.experience-kicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.experience-kicker span {
+  display: inline-flex;
+  padding: 4px 9px;
+  border: 1px solid rgba(59,130,246,.20);
+  border-radius: 999px;
+  color: #2563eb;
+  background: rgba(219,234,254,.72);
+}
+.engineering-copy h3 {
+  margin: 0 0 5px;
+  color: var(--heading);
+  font-size: 21px;
+  line-height: 1.28;
+}
+.engineering-copy .role { margin-bottom: 11px; }
+.experience-summary {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 13.2px;
+  line-height: 1.68;
+}
+.capability-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0 0 13px;
+}
+.capability-cards article {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid rgba(148,163,184,.24);
+  border-radius: 12px;
+  background: rgba(248,250,252,.62);
+}
+.capability-cards strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #1e3a8a;
+  font-size: 11.5px;
+}
+.capability-cards p {
+  margin: 0;
+  color: #64748b;
+  font-size: 10.8px;
+  line-height: 1.48;
+}
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.experience-tags span {
+  padding: 4px 8px;
+  border: 1px solid rgba(59,130,246,.18);
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: rgba(219,234,254,.64);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.skill-groups .skill-feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px 17px;
+  border-color: rgba(59,130,246,.28);
+  background: linear-gradient(135deg, rgba(239,246,255,.84), rgba(255,255,255,.78));
+}
+.skill-groups .skill-feature h3 { margin-bottom: 6px; }
+.skill-groups .skill-feature > div > p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.58;
+}
+.skill-groups .skill-feature .tag-list { margin: 0; }
+
+body.theme-deep-lab .engineering-feature {
+  border-color: rgba(71,85,105,.50);
+  background: linear-gradient(145deg, rgba(15,29,51,.80), rgba(8,18,34,.74));
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+body.theme-deep-lab .engineering-feature:hover {
+  border-color: rgba(96,165,250,.48);
+  box-shadow: 0 22px 48px rgba(0,0,0,.30), 0 0 30px rgba(37,99,235,.11);
+}
+body.theme-deep-lab .engineering-copy h3 { color: #f8fafc; }
+body.theme-deep-lab .experience-kicker { color: #94a3b8; }
+body.theme-deep-lab .experience-kicker span {
+  color: #7dd3fc;
+  border-color: rgba(34,211,238,.24);
+  background: rgba(14,116,144,.14);
+}
+body.theme-deep-lab .experience-summary { color: #cbd5e1; }
+body.theme-deep-lab .capability-cards article {
+  border-color: rgba(71,85,105,.42);
+  background: rgba(15,31,55,.64);
+}
+body.theme-deep-lab .capability-cards strong { color: #93c5fd; }
+body.theme-deep-lab .capability-cards p { color: #94a3b8; }
+body.theme-deep-lab .experience-tags span {
+  color: #7dd3fc;
+  border-color: rgba(56,189,248,.22);
+  background: rgba(30,64,175,.18);
+}
+body.theme-deep-lab .skill-groups .skill-feature {
+  border-color: rgba(56,189,248,.26);
+  background: linear-gradient(135deg, rgba(12,35,61,.91), rgba(16,24,53,.80));
+  box-shadow: inset 0 0 0 1px rgba(59,130,246,.05), 0 8px 26px rgba(0,0,0,.17);
+}
+body.theme-deep-lab .skill-groups .skill-feature > div > p { color: #aebdd0; }
+
+@media (max-width: 860px) {
+  .engineering-feature { grid-template-columns: 1fr; }
+  .pipeline-showcase { min-height: auto; }
+  .pipeline-flow { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .pipeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 112px;
+    padding: 9px;
+  }
+  .pipeline-node:not(:last-child)::after {
+    left: auto;
+    right: -7px;
+    bottom: auto;
+    top: 24px;
+    width: 7px;
+    height: 1px;
+  }
+  .pipeline-node b { flex: 0 0 auto; margin-bottom: 7px; }
+  .pipeline-node span { font-size: 11px; }
+  .pipeline-node small { font-size: 9.5px; }
+  .engineering-copy { padding: 7px 3px 3px; }
+}
+
+@media (max-width: 680px) {
+  .pipeline-flow { grid-template-columns: 1fr; gap: 7px; }
+  .pipeline-node {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    min-height: 52px;
+    padding: 8px 11px;
+  }
+  .pipeline-node:not(:last-child)::after {
+    left: 27px;
+    right: auto;
+    top: auto;
+    bottom: -8px;
+    width: 1px;
+    height: 8px;
+  }
+  .pipeline-node b { grid-row: 1 / 3; margin-bottom: 0; }
+  .pipeline-node span { font-size: 13px; }
+  .pipeline-node small { font-size: 10.5px; }
+  .capability-cards { grid-template-columns: 1fr; }
+  .skill-groups .skill-feature { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pipeline-status i { animation: none !important; }
+}
+
 </style>
 </head>
 <body id="top" class="theme-deep-lab">
@@ -1134,6 +1461,7 @@ body.theme-deep-lab .section {
     <a href="#about">About Me</a>
     <a href="#news">News</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
     <a href="#honors">Honors and Awards</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
@@ -1181,6 +1509,7 @@ body.theme-deep-lab .section {
     <section class="section" id="news">
       <h2>News</h2>
       <ul class="news-list">
+        <li><span>2026.07</span> Built and validated an <strong>end-to-end YOLO11 training pipeline</strong> covering dataset checks, model preparation, training, validation, inference, and GitHub-based iteration.</li>
         <li><span>2026.07</span> Started building this personal academic homepage to document projects, coursework, and long-term growth.</li>
         <li><span>2026.04</span> Began serving as the <strong>Motion Control Lead</strong> for a greenhouse robot positioning and navigation project.</li>
         <li><span>2026.04</span> Designed and led an eldercare volunteer activity at Jubao Mountain Senior Care Center.</li>
@@ -1244,6 +1573,81 @@ body.theme-deep-lab .section {
     
     </section>
 
+    <section class="section" id="experience">
+      <h2>Featured Engineering Experience</h2>
+      <p class="section-note">A focused example of turning a machine learning workflow into a reusable engineering system.</p>
+
+      <article class="engineering-feature">
+        <div class="pipeline-showcase" aria-label="YOLO11 training pipeline workflow">
+          <div class="pipeline-topline">
+            <span>YOLO11 PIPELINE</span>
+            <time datetime="2026-07">2026.07</time>
+          </div>
+
+          <div class="pipeline-flow">
+            <div class="pipeline-node">
+              <b>01</b>
+              <span>Dataset Check</span>
+              <small>paths · labels · format</small>
+            </div>
+            <div class="pipeline-node">
+              <b>02</b>
+              <span>Model Setup</span>
+              <small>ModelScope weights</small>
+            </div>
+            <div class="pipeline-node">
+              <b>03</b>
+              <span>Train</span>
+              <small>reproducible execution</small>
+            </div>
+            <div class="pipeline-node">
+              <b>04</b>
+              <span>Validate</span>
+              <small>metrics · best.pt · last.pt</small>
+            </div>
+            <div class="pipeline-node">
+              <b>05</b>
+              <span>Infer &amp; Export</span>
+              <small>images · JSON summary</small>
+            </div>
+          </div>
+
+          <div class="pipeline-status"><i></i> One-command · End-to-end</div>
+        </div>
+
+        <div class="engineering-copy">
+          <div class="experience-kicker">
+            <span>ML Engineering</span>
+            <time datetime="2026-07">Jul. 2026</time>
+          </div>
+          <h3>End-to-End YOLO11 Training Pipeline</h3>
+          <p class="role">Pipeline Developer · Object Detection Engineering</p>
+          <p class="experience-summary">
+            Designed and implemented a reusable workflow based on Ultralytics YOLO11, integrating dataset quality checks, ModelScope pretrained-weight preparation, model training, validation, optional inference, and automatic best-weight export.
+          </p>
+
+          <div class="capability-cards">
+            <article>
+              <strong>Pipeline Automation</strong>
+              <p>Connected data checking, model preparation, training, validation, and inference into a one-command process.</p>
+            </article>
+            <article>
+              <strong>Test &amp; Validation</strong>
+              <p>Verified weight generation, model metrics, image inference, and JSON summaries through an end-to-end COCO8 test.</p>
+            </article>
+            <article>
+              <strong>GitHub Workflow</strong>
+              <p>Managed branches, commits, pull requests, merges, and usage documentation for Windows and Linux.</p>
+            </article>
+          </div>
+
+          <p class="experience-tags">
+            <span>YOLO11</span><span>ModelScope</span><span>Dataset QA</span><span>Model Validation</span><span>Git &amp; GitHub</span><span>Technical Documentation</span>
+          </p>
+        </div>
+      </article>
+    </section>
+
     <section class="section" id="honors">
       <h2>Honors and Awards</h2>
       <ul class="bullets two-column-list">
@@ -1279,8 +1683,17 @@ body.theme-deep-lab .section {
     </section>
 
     <section class="section" id="skills">
-      <h2>Skills and Certifications</h2>
+      <h2>Skills and Capabilities</h2>
       <div class="skill-groups">
+        <article class="skill-feature">
+          <div>
+            <h3>Machine Learning Engineering</h3>
+            <p>Building reproducible model workflows from dataset validation to training, evaluation, inference, artifact export, version control, and cross-platform documentation.</p>
+          </div>
+          <p class="tag-list">
+            <span>Ultralytics YOLO11</span><span>ModelScope</span><span>Dataset Quality Check</span><span>Training Pipeline</span><span>Model Evaluation</span><span>Git &amp; GitHub</span><span>Windows &amp; Linux</span>
+          </p>
+        </article>
         <article>
           <h3>Programming and Data</h3>
           <p class="tag-list"><span>C</span><span>Python</span><span>Stata</span><span>Panel Data</span><span>Multi-Period DID</span><span>Data Visualization</span></p>
